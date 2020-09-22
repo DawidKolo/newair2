@@ -1,0 +1,55 @@
+<section id="add" class="container">
+    <div class="form-wrap">
+      <h1>Add A Flight</h1>
+
+      {{#each errors}}
+      <div class="error">
+        <p>{{text}}</p>
+      </div>
+      {{/each}}
+       <form action="/fly/add" method="POST">
+
+        <div class="input-group">
+          <label for="date">Flight date</label>
+          <input type="date" name="date" id="date" class="input-box" placeholder="yyyy-mm-dd hh:mm:ss.1+2" value={date}>
+        </div>
+
+        <div class="input-group">
+          <label for="aircraftId">Aircraft Id</label>
+          <input type="number" name="aircraftId" id="aircraftId" class="input-box" placeholder="1, 2, 3" value={aircraftId}>
+        </div>
+
+        <div class="input-group">
+          <label for="destId">Destination Id</label>
+          <input type="number" name="destId" id="destId" class="input-box" placeholder="1, 2, 3" value={destId}>
+        </div>
+
+        <div class="input-group">
+          <label for="cpt">Captains Id</label>
+          <input type="number" name="cpt" id="cpt" class="input-box" placeholder="1, 2, 3" value={cpt}>
+        </div>
+
+        <div class="input-group">
+          <label for="offr">Officer Id</label>
+          <input type="number" name="offr" id="offr" class="input-box" placeholder="1, 2, 3" value={offr}>
+        </div>
+
+        <div class="input-group">
+          <label for="crew">Crew Id</label>
+          <input type="number" name="crew" id="crew" class="input-box" placeholder="1, 2, 3" value={crew}>
+        </div>
+
+        <div class="input-group">
+          <label for="disp">Dispatcher Id</label>
+          <input type="number" name="disp" id="disp" class="input-box" placeholder="1, 2, 3" value={disp}>
+        </div>
+
+        <div class="input-group">
+          <label for="gstaff">Ground crew Id</label>
+          <input type="number" name="gstaff" id="crew" class="input-box" placeholder="1, 2, 3" value={gstaff}>
+        </div>
+        
+        <input type="submit" value="Add Flight" class="btn btn-reverse">
+      </form>
+    </div>
+  </section>

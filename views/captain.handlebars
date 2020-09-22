@@ -1,0 +1,15 @@
+<section id="flight" class="container">
+    <h1>All Captains</h1>
+
+    
+        {{#each Captain}}
+    <div class="flight">
+       <h3>Captains details:</h3>
+      <p>Name: {{firstName}} {{lastName}}</p>
+      <ul><li>phone: {{phone}}</li>
+          <li>salary: ${{salary}}</li></ul>
+    </div>
+      {{else}}
+    <p>No data available</p>
+     {{/each}}
+  </section>
