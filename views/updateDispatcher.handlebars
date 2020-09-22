@@ -1,13 +1,13 @@
-<section id="addCaptain" class="container">
+<section id="updateDispatcher" class="container">
     <div class="form-wrap">
-      <h1>Update the Captain</h1>
+      <h1>Update the Dispatcher</h1>
 
       {{#each errors}}
       <div class="error">
         <p>{{text}}</p>
       </div>
       {{/each}}
-       <form action="/captain/addCaptain" method="POST">
+       <form action="/dispatcher/updateDispatcher" method="POST">
         <div class="input-group">
           <label for="id">Id</label>
           <input type="number" name="id" id="id" class="input-box" placeholder="choose the id">
@@ -33,7 +33,7 @@
           <input type="number" name="salary" id="salary" class="input-box" placeholder="Enter a salary (numbers only)">
         </div>
         
-        <input type="submit" value="Update the Captain" class="btn btn-reverse">
+        <input type="submit" value="Update the Dispatcher" class="btn btn-reverse">
       </form>
     </div>
   </section>

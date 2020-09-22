@@ -10,13 +10,13 @@ module.exports = (sequelize, DataTypes) => {
     salary: DataTypes.INTEGER
   },{});
 
-    // Captain.associate = function(models) {
+    Captain.associate = function(models) {
       
-    //   Captain.belongsTo(models.Flight, {
-    //     foreignKey: 'cpt',
-    //     onDelete: 'CASCADE'
-    //   })
-    // }
+      Captain.belongsTo(models.Flight, {
+        foreignKey: 'id',
+        onDelete: 'CASCADE'
+      })
+    }
     sequelize:sequelize
   return Captain;
 };

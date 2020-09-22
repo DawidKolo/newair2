@@ -1,0 +1,16 @@
+<section id="flight" class="container">
+    <h1>All Airports</h1>
+
+    
+        {{#each Airport}}
+    <div class="flight">
+       <h3>Airport details:</h3>
+      <p>id: {{id}}</p>
+      <ul>
+          <li>Destination: {{dest}}</li>
+     </ul>
+    </div>
+      {{else}}
+    <p>No data available</p>
+     {{/each}}
+  </section>

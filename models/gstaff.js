@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
     Gstaff.associate = function(models) {
       
       Gstaff.belongsTo(models.Flight, {
-        foreignKey: 'gstaff',
+        foreignKey: 'id',
         onDelete: 'CASCADE'
       })
     }

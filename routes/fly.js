@@ -87,6 +87,7 @@ router.post('/add', (req, res) => {
             disp,
             gstaff 
         })
+       }else{
         
         db.Flight.create({
             date,

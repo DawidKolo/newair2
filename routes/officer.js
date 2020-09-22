@@ -7,26 +7,26 @@ const db = require('../models');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 
-// get SELECT * FROM "Captains"
+// get SELECT * FROM "Officers"
 router.get('/', (req, res) => 
-    db.Captain.findAll({
+    db.Officers.findAll({
         
          order: [
              ['salary', 'ASC']
          ],
     })
-        .then(Captain => {
+        .then(Officer => {
             
-            res.render('Captain', {
-                Captain
+            res.render('Officer', {
+                Officer
             });
         })
         .catch(err => console.log(err)));
-        // Display add Captain form
-router.get('/addCaptain', (req, res) => res.render('addCaptain'));
+        // Display update Officer form
+router.get('/updateOfficer', (req, res) => res.render('updateOfficer'));
 
-// update a captain
-router.post('/addCaptain', (req, res) => {
+// update a Officer
+router.post('/updateOfficer', (req, res) => {
     let { id, firstName, lastName, phone, salary } = req.body;
     let errors = [];
     if (!id) {
@@ -51,7 +51,7 @@ router.post('/addCaptain', (req, res) => {
     //errors checking
 
     if(errors.length > 0) {
-        res.render('addCaptain', {
+        res.render('updateOfficer', {
             errors,
             id,
             firstName,
@@ -61,7 +61,7 @@ router.post('/addCaptain', (req, res) => {
         })}
         else{
         
-        db.Captain.update({
+        db.Officer.update({
             id,
             firstName,
             lastName,
@@ -69,7 +69,7 @@ router.post('/addCaptain', (req, res) => {
             salary},
             {where: {id: id}        
     })
-           .then(captain => res.redirect('/captain'))
+           .then(Officer => res.redirect('/Officer'))
            .catch(err => res.render('error', {error:err.message}))  
     }
 

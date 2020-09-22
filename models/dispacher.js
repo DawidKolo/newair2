@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
     Dispacher.associate = function(models) {
       
       Dispacher.belongsTo(models.Flight, {
-        foreignKey: 'disp',
+        foreignKey: 'id',
         onDelete: 'CASCADE'
       })
     }

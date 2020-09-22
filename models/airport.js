@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
     Airport.associate = function(models) {
       
       Airport.belongsTo(models.Flight, {
-        foreignKey: 'destId',
+        foreignKey: 'id',
         onDelete: 'CASCADE'
       })
     }

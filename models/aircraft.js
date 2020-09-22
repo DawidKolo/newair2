@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
     Aircraft.associate = function(models) {
       
       Aircraft.belongsTo(models.Flight, {
-        foreignKey: 'aircraftId',
+        foreignKey: 'id',
         onDelete: 'CASCADE'
       })
     }

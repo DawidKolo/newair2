@@ -1,0 +1,24 @@
+<section id="updateAircraft" class="container">
+    <div class="form-wrap">
+      <h1>Update the Aircraft</h1>
+
+      {{#each errors}}
+      <div class="error">
+        <p>{{text}}</p>
+      </div>
+      {{/each}}
+       <form action="/aircraft/updateAircraft" method="POST">
+        <div class="input-group">
+          <label for="id">Id</label>
+          <input type="number" name="id" id="id" class="input-box" placeholder="choose the id">
+        </div>
+
+        <div class="input-group">
+          <label for="regNum">Registration Number</label>
+          <input type="text" name="regNum" id="regNum" class="input-box" placeholder="Enter the Registration Number">
+        </div>
+        
+        <input type="submit" value="Update the Aircraft" class="btn btn-reverse">
+      </form>
+    </div>
+  </section>

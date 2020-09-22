@@ -45,6 +45,26 @@ app.use('/country', require('./routes/country'));
 
 app.use('/captain', require('./routes/captain'));
 
+//airport
+
+app.use('/airport', require('./routes/airport'));
+
+// officer
+app.use('/officer', require('./routes/officer'));
+
+//gStaff
+app.use('/gstaff', require('./routes/gstaff'));
+
+//crew
+app.use('/crew', require('./routes/crew'));
+
+//Dispatcher
+app.use('/dispatcher', require('./routes/dispatcher'));
+
+// Aircraft
+app.use('/aircraft', require('./routes/aircraft'));
+
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, console.log(`Server started at ${PORT}`));

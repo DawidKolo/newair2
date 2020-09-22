@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
     Crew.associate = function(models) {
       
       Crew.belongsTo(models.Flight, {
-        foreignKey: 'crew',
+        foreignKey: 'id',
         onDelete: 'CASCADE'
       })
     }
