@@ -1,39 +1,39 @@
 <section id="updategStaff" class="container">
-    <div class="form-wrap">
-      <h1>Update the Ground Crew</h1>
+  <div class="form-wrap">
+    <h1>Update the Ground Crew</h1>
 
-      {{#each errors}}
-      <div class="error">
-        <p>{{text}}</p>
-      </div>
-      {{/each}}
-       <form action="/gstaff/updategStaff" method="POST">
-        <div class="input-group">
-          <label for="id">Id</label>
-          <input type="number" name="id" id="id" class="input-box" placeholder="choose the id">
-        </div>
-
-        <div class="input-group">
-          <label for="firstName">First Name</label>
-          <input type="text" name="firstName" id="firstName" class="input-box" placeholder="Enter the first name">
-        </div>
-
-        <div class="input-group">
-          <label for="lastName">Last Name</label>
-          <input type="text" name="lastName" id="lastName" class="input-box" placeholder="Enter the last name">
-        </div>
-
-        <div class="input-group">
-          <label for="phone">Phone</label>
-          <input type="text" name="phone" id="phone" class="input-box" placeholder="Enter a phone number">
-        </div>
-
-        <div class="input-group">
-          <label for="salary">Salary</label>
-          <input type="number" name="salary" id="salary" class="input-box" placeholder="Enter a salary (numbers only)">
-        </div>
-        
-        <input type="submit" value="Update the Ground Crew" class="btn btn-reverse">
-      </form>
+    {{#each errors}}
+    <div class="error">
+      <p>{{text}}</p>
     </div>
-  </section>
+    {{/each}}
+    <form action="/gstaff/updategStaff" method="POST">
+      <div class="input-group">
+        <label for="id">Id</label>
+        <input type="number" name="id" id="id" class="input-box" placeholder="choose the id">
+      </div>
+
+      <div class="input-group">
+        <label for="firstName">First Name</label>
+        <input type="text" name="firstName" id="firstName" class="input-box" placeholder="Enter the first name">
+      </div>
+
+      <div class="input-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" name="lastName" id="lastName" class="input-box" placeholder="Enter the last name">
+      </div>
+
+      <div class="input-group">
+        <label for="phone">Phone</label>
+        <input type="text" name="phone" id="phone" class="input-box" placeholder="Enter a phone number">
+      </div>
+
+      <div class="input-group">
+        <label for="salary">Salary</label>
+        <input type="number" name="salary" id="salary" class="input-box" placeholder="Enter a salary (numbers only)">
+      </div>
+
+      <input type="submit" value="Update the Ground Crew" class="btn btn-reverse">
+    </form>
+  </div>
+</section>

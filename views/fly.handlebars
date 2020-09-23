@@ -1,25 +1,25 @@
 <section id="flights" class="container">
-    <h1>All Flights</h1>
+  <h1>All Flights</h1>
 
-    
-        {{#each fly}}
-    <div class="flight">
-       <h3>Flight details:</h3>
-      <p>Date: {{date}}</p>
-      <ul>
-        <li>Aircraft Id: {{aircraftId}}</li>
-        <li>Destination: {{destId}}</li>
-      </ul>
-      <div class="tech">
-        <small>Full Crew: <span>Captain: {{cpt}}, First Officer: {{offr}}</span></small></div>
-      <div class="tech"><small>  
+
+  {{#each fly}}
+  <div class="flight">
+    <h3>Flight details:</h3>
+    <p>Date: {{date}}</p>
+    <ul>
+      <li>Aircraft Id: {{aircraftId}}</li>
+      <li>Destination: {{destId}}</li>
+    </ul>
+    <div class="tech">
+      <small>Full Crew: <span>Captain: {{cpt}}, First Officer: {{offr}}</span></small></div>
+    <div class="tech"><small>
         <span>Dispatcher: {{disp}}, Crew: {{crew}}, Ground: {{gstaff}}</span></small>
-      </div>
-        
-        </div>
+    </div>
+
+  </div>
 
 
-     {{else}}
-    <p>No data available</p>
-     {{/each}}
-  </section>
+  {{else}}
+  <p>No data available</p>
+  {{/each}}
+</section>

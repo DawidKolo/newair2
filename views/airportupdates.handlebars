@@ -2,12 +2,14 @@
   <h1>All Airports</h1>
 
 
-  {{#each Airport}}
+  {{#each AirportUpdates}}
   <div class="flight">
-    <h3>Airport details:</h3>
+    <h3>Airport Updates logs:</h3>
     <p>id: {{id}}</p>
     <ul>
-      <li>Destination: {{dest}}</li>
+      <li>Country: {{country}}</li>
+      <li>Previous Airport: {{oldAirport}}</li>
+      <li>New Airport: {{newAirport}}</li>
     </ul>
   </div>
   {{else}}

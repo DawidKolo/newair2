@@ -1,16 +1,16 @@
 <section id="flight" class="container">
-    <h1>All Aircrafts</h1>
+  <h1>All Aircrafts</h1>
 
-    
-        {{#each Aircraft}}
-    <div class="flight">
-       <h3>Aircraft details:</h3>
-      <p>id: {{id}}</p>
-      <ul>
-          <li>Registration Number: {{regNum}}</li>
-     </ul>
-    </div>
-      {{else}}
-    <p>No data available</p>
-     {{/each}}
-  </section>
+
+  {{#each Aircraft}}
+  <div class="flight">
+    <h3>Aircraft details:</h3>
+    <p>id: {{id}}</p>
+    <ul>
+      <li>Registration Number: {{regNum}}</li>
+    </ul>
+  </div>
+  {{else}}
+  <p>No data available</p>
+  {{/each}}
+</section>

@@ -1,51 +1,47 @@
-'use strict';
+"use strict";
 
-const {
-  Model
-} = require('sequelize');
+const { Model } = require("sequelize");
 
 module.exports = (sequelize, DataTypes) => {
-  const Flight = sequelize.define('Flight', {
-    date: DataTypes.DATEONLY,
-    aircraftId: DataTypes.INTEGER,
-    destId: DataTypes.INTEGER,
-    cpt: DataTypes.INTEGER,
-    offr: DataTypes.INTEGER,
-    crew: DataTypes.INTEGER,
-    disp: DataTypes.INTEGER,
-    gstaff: DataTypes.INTEGER
-  }, {})
-  
-  Flight.associate = function(models) {
-    
+  const Flight = sequelize.define(
+    "Flight",
+    {
+      date: DataTypes.DATEONLY,
+      aircraftId: DataTypes.INTEGER,
+      destId: DataTypes.INTEGER,
+      cpt: DataTypes.INTEGER,
+      offr: DataTypes.INTEGER,
+      crew: DataTypes.INTEGER,
+      disp: DataTypes.INTEGER,
+      gstaff: DataTypes.INTEGER,
+    },
+    {}
+  );
+
+  Flight.associate = function (models) {
     Flight.hasOne(models.Aircraft, {
-      foreignKey: 'id',
+      foreignKey: "id",
     });
     Flight.hasOne(models.Airport, {
-      foreignKey: 'id',
+      foreignKey: "id",
     });
     Flight.hasOne(models.Captain, {
-      foreignKey: 'id',
+      foreignKey: "id",
     });
     Flight.hasOne(models.Officers, {
-      foreignKey: 'id',
+      foreignKey: "id",
     });
     Flight.hasOne(models.Crew, {
-      foreignKey: 'id',
+      foreignKey: "id",
     });
     Flight.hasOne(models.Dispacher, {
-      foreignKey: 'id',
+      foreignKey: "id",
     });
     Flight.hasOne(models.Gstaff, {
-      foreignKey: 'id',
+      foreignKey: "id",
     });
-    
-
   };
   module.exports = Flight;
-  
+
   return Flight;
-
 };
-
-  

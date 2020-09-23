@@ -1,69 +1,77 @@
-const express = require('express');
-const exphbs = require('express-handlebars');
-const Handlebars = require('handlebars')
-const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
-const bodyParser = require('body-parser');
-const path = require('path');
-const db = require('./config/database');   // database in
+const express = require("express");
+const exphbs = require("express-handlebars");
+const Handlebars = require("handlebars");
+const {
+  allowInsecurePrototypeAccess,
+} = require("@handlebars/allow-prototype-access");
+const bodyParser = require("body-parser");
+const path = require("path");
+const db = require("./config/database"); // database in
 
-db.authenticate()                          // test db
-.then(() => console.log('Database connected'))
-.catch(err => console.log('Error: + err'))
-
-
+db.authenticate() // test db
+  .then(() => console.log("Database connected"))
+  .catch((err) => console.log("Error: + err"));
 
 const app = express();
 
 //Handlebars
 
-app.engine('handlebars', exphbs({ 
-    defaultLayout: 'main',
-    handlebars: allowInsecurePrototypeAccess(Handlebars)
-}));
-app.set('view engine', 'handlebars');
+app.engine(
+  "handlebars",
+  exphbs({
+    defaultLayout: "main",
+    handlebars: allowInsecurePrototypeAccess(Handlebars),
+  })
+);
+app.set("view engine", "handlebars");
 
 // Body parser
 
-app.use(bodyParser.urlencoded({extended: false}));
-
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // folder css/html
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, "public")));
 
 // index route
 
-app.get('/', (req, res) => res.render('index', {layout: 'landing' }));
+app.get("/", (req, res) => res.render("index", { layout: "landing" }));
 
 // flight fly
-app.use('/fly', require('./routes/fly'));
+app.use("/fly", require("./routes/fly"));
 
-// country 
-app.use('/country', require('./routes/country'));
+// country
+app.use("/country", require("./routes/country"));
 
 // captain
 
-app.use('/captain', require('./routes/captain'));
+app.use("/captain", require("./routes/captain"));
 
 //airport
 
-app.use('/airport', require('./routes/airport'));
+app.use("/airport", require("./routes/airport"));
 
 // officer
-app.use('/officer', require('./routes/officer'));
+app.use("/officer", require("./routes/officer"));
 
 //gStaff
-app.use('/gstaff', require('./routes/gstaff'));
+app.use("/gstaff", require("./routes/gstaff"));
 
 //crew
-app.use('/crew', require('./routes/crew'));
+app.use("/crew", require("./routes/crew"));
 
 //Dispatcher
-app.use('/dispatcher', require('./routes/dispatcher'));
+app.use("/dispatcher", require("./routes/dispatcher"));
 
 // Aircraft
-app.use('/aircraft', require('./routes/aircraft'));
+app.use("/aircraft", require("./routes/aircraft"));
 
+// CountryAirport
+app.use("/countryairport", require("./routes/countryairport"));
+
+// Update logs
+
+app.use("/airportupdates", require("./routes/airportupdates"));
 
 const PORT = process.env.PORT || 5000;
 

@@ -1,28 +1,24 @@
-'use strict';
+"use strict";
 
-const faker = require('faker');
+const faker = require("faker");
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     let data = [];
     let amount = 100;
 
-    while(amount--) {
+    while (amount--) {
       data.push({
         dest: faker.address.country(),
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
       });
     }
-     
-      await queryInterface.bulkInsert('Airports', data, {
-      }, {});    
 
+    await queryInterface.bulkInsert("Airports", data, {}, {});
   },
 
   down: async (queryInterface, Sequelize) => {
-    
-     await queryInterface.bulkDelete('Airports', null, {});
-     
-  }
+    await queryInterface.bulkDelete("Airports", null, {});
+  },
 };

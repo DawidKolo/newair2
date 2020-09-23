@@ -1,0 +1,22 @@
+<section id="updateCountryAirport" class="container">
+  <div class="form-wrap">
+    <h1>Update the Airport in the selected country</h1>
+
+    {{#each errors}}
+    <div class="error">
+      <p>{{text}}</p>
+    </div>
+    {{/each}}
+    <form action="/countryairport/updateCountryAirport" method="POST">
+      <div class="input-group">
+        <label for="id">Id</label>
+        <input type="number" name="id" id="id" class="input-box" placeholder="choose the id">
+      </div>
+      <div class="input-group">
+        <label for="airport">Airport</label>
+        <input type="text" name="airport" id="airport" class="input-box" placeholder="Enter the Airport">
+      </div>
+      <input type="submit" value="Update the Airport in the Country" class="btn btn-reverse">
+    </form>
+  </div>
+</section>

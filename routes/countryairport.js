@@ -9,50 +9,52 @@ const db = require("../models");
 const Sequelize = require("sequelize");
 const Op = Sequelize.Op;
 
-// get SELECT * FROM "Airports"
+// get SELECT * FROM "CountryAirports"
 router.get("/", (req, res) =>
-  db.Airport.findAll({
+  db.CountryAirport.findAll({
     order: [["id", "ASC"]],
   })
-    .then((Airport) => {
-      res.render("Airport", {
-        Airport,
+    .then((CountryAirport) => {
+      res.render("CountryAirport", {
+        CountryAirport,
       });
     })
     .catch((err) => console.log(err))
 );
 
-// Display an update Airport  form
-router.get("/updateAirport", (req, res) => res.render("updateAirport"));
+// Display an update CountryAirport  form
+router.get("/updateCountryAirport", (req, res) =>
+  res.render("updateCountryAirport")
+);
 
-// update the airport
-router.post("/updateAirport", (req, res) => {
-  let { id, dest } = req.body;
+// update the Countryairport
+router.post("/updateCountryAirport", (req, res) => {
+  let { id, airport } = req.body;
   let errors = [];
   if (!id) {
     errors.push({ text: "Please choose an Id" });
   }
-  if (!dest) {
-    errors.push({ text: "Please enter the Destination" });
+  if (!airport) {
+    errors.push({ text: "Please enter the airport code " });
   }
 
   //errors checking
 
   if (errors.length > 0) {
-    res.render("updateAirport", {
+    res.render("updateCountryAirport", {
       errors,
       id,
-      dest,
+      airport,
     });
   } else {
-    db.Airport.update(
+    db.CountryAirport.update(
       {
         id,
-        dest,
+        airport,
       },
       { where: { id: id } }
     )
-      .then((airport) => res.redirect("/airport"))
+      .then((countryairport) => res.redirect("/countryairport"))
       .catch((err) => res.render("error", { error: err.message }));
   }
 });

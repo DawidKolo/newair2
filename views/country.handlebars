@@ -1,18 +1,18 @@
 <section id="country" class="container">
-    <h1>All Countries</h1>
-
-    
-        {{#each country}}
-    <div class="flight">
-       <h3>Country details:</h3>
-      <p>Name: {{country}}</p>
-      
-      <div class="tech">
-        <small><span>Description: {{description}}</span></small></div>
-      </div>
+  <h1>All Countries</h1>
 
 
-     {{else}}
-    <p>No data available</p>
-     {{/each}}
-  </section>
+  {{#each country}}
+  <div class="flight">
+    <h3>Country details:</h3>
+    <p>Name: {{country}}</p>
+
+    <div class="tech">
+      <small><span>Description: {{description}}</span></small></div>
+  </div>
+
+
+  {{else}}
+  <p>No data available</p>
+  {{/each}}
+</section>
