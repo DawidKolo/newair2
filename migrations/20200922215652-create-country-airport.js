@@ -13,7 +13,7 @@ module.exports = {
       },
       airport: {
         type: Sequelize.STRING,
-        unique: true,
+        unique: false,
       },
       createdAt: {
         allowNull: true,

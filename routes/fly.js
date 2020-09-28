@@ -33,51 +33,38 @@ router.post("/add", (req, res) => {
 
   if (!date) {
     errors.push({ text: "Please enter the date" });
-    return res.status(400).json({
-      status: "error",
-    });
+    
+      
+    
   }
   if (!aircraftId) {
     errors.push({ text: "Please enter the Aircraft id" });
-    return res.status(400).json({
-      status: "error",
-    });
+    
+      
   }
   if (!destId) {
     errors.push({ text: "Please enter the Destination id" });
-    return res.status(400).json({
-      status: "error",
-    });
+    
   }
   if (!cpt) {
     errors.push({ text: "Please enter the Captain id" });
-    return res.status(400).json({
-      status: "error",
-    });
+    
   }
   if (!offr) {
     errors.push({ text: "Please enter the Officer id" });
-    return res.status(400).json({
-      status: "error",
-    });
+    
   }
   if (!crew) {
     errors.push({ text: "Please enter the Crew id" });
-    return res.status(400).json({
-      status: "error",
-    });
+   
   }
   if (!disp) {
     errors.push({ text: "Please enter the Dispatcher id" });
-    return res.status(400).json({
-      status: "error",
-    });
+    
   }
   if (!gstaff) {
     errors.push({ text: "Please enter the Ground Staff id" });
-    return res.status(400).json({
-      status: "error",
-    });
+    
   }
 
   //errors checking

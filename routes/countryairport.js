@@ -31,7 +31,7 @@ router.get("/updateCountryAirport", (req, res) =>
 router.post("/updateCountryAirport", (req, res) => {
   let { id, airport } = req.body;
   let errors = [];
-  if (!id) {
+   if (!id) {
     errors.push({ text: "Please choose an Id" });
   }
   if (!airport) {
@@ -54,7 +54,7 @@ router.post("/updateCountryAirport", (req, res) => {
       },
       { where: { id: id } }
     )
-      .then((countryairport) => res.redirect("/countryairport"))
+      .then((countryairport) => res.redirect("/countryAirport"))
       .catch((err) => res.render("error", { error: err.message }));
   }
 });
